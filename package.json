@@ -1,5 +1,5 @@
 {
-  "name": "webpack-demo",
+  "name": "To-do-list",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MaiRizk/webpack-demo.git"
+    "url": "git+https://github.com/MaiRizk/To-do-list.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MaiRizk/webpack-demo/issues"
+    "url": "https://github.com/MaiRizk/To-do-list/issues/issues"
   },
-  "homepage": "https://github.com/MaiRizk/webpack-demo#readme",
+  "homepage": "https://github.com/MaiRizk/To-do-list#readme",
   "devDependencies": {
     "css-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
