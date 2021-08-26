@@ -1,0 +1,12 @@
+body {
+  width: 40%;
+  margin: auto;
+  padding: 20px;
+  color: #545862;
+}
+
+.list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
