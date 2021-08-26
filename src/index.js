@@ -1,5 +1,5 @@
 import './style.css';
-import onCheck from '/src/status.js';
+import onCheck from './status';
 
 const tasks = [
   {
