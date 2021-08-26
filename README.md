@@ -10,9 +10,12 @@ This is a simple to-do-list in which you can add, mark as done and remove daily 
 - Webpack
 
 ## Getting Started 💪🏽
+- Clone this repository in your terminal using git clone command.
+- Enter the repo directory.
+- Run npm install in your terminal.
+- Run npm start in terminal
 
-To get the source files you can download the zip file from the green button. 👆🏽
-You can also clone the project using git. If you do not know how to use git you can learn here: [cloning](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository). To get the live version just click the link down below. 👇🏽️
+To get the live version just click the link down below. 👇🏽️
 
 ## Live Version Here 👇🏽️
 
