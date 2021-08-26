@@ -5,7 +5,9 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
     "start": "webpack serve --open",
+    "server": "node server.js",
     "build": "webpack"
   },
   "repository": {
@@ -20,7 +22,12 @@
   },
   "homepage": "https://github.com/MaiRizk/To-do-list#readme",
   "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "css-loader": "^6.2.0",
+    "express": "^4.17.1",
     "html-webpack-plugin": "^5.3.2",
     "style-loader": "^3.2.1",
     "stylelint": "^13.13.1",
@@ -29,6 +36,7 @@
     "stylelint-scss": "^3.20.1",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0",
+    "webpack-dev-middleware": "^5.0.0",
     "webpack-dev-server": "^4.0.0"
   },
   "dependencies": {
