@@ -10,3 +10,7 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+
+li {
+  list-style-type: none;
+}
