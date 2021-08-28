@@ -2,7 +2,7 @@
 
 This is a simple to-do-list in which you can add, mark as done and remove daily tasks from the list.
 
-![Screenshot1](/Images/readme1.png)
+![Screenshot1](/Images/readme2.png)
 
 ## Built With
 
