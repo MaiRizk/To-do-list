@@ -19,7 +19,7 @@ To get the live version just click the link down below. 👇🏽️
 
 ## Live Version Here 👇🏽️
 
-- [To-do-list](https://mairizk.github.io/To-do-list/)
+- [To-do-list](https://mairizk.github.io/To-do-list/index.html/)
 
 ## Author
 
