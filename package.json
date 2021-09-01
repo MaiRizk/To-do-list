@@ -1,5 +1,8 @@
 {
   "name": "To-do-list",
+  "jest": {
+    "verbose": true
+  },
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -45,6 +48,7 @@
     "webpack-dev-server": "^4.0.0"
   },
   "dependencies": {
+    "jsdom": "^17.0.0",
     "lodash": "^4.17.21"
   }
 }

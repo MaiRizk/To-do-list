@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1630528257650" clover="3.2.0">
-  <project timestamp="1630528257650" name="All files">
-    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
+<coverage generated="1630536515998" clover="3.2.0">
+  <project timestamp="1630536515998" name="All files">
+    <metrics statements="15" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="2" elements="22" coveredelements="13" complexity="0" loc="15" ncloc="15" packages="1" files="2" classes="2"/>
+    <file name="add-delete.js" path="/home/mai/Desktop/To-do-list/src/add-delete.js">
+      <metrics statements="10" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <line num="2" count="0" type="stmt"/>
+      <line num="3" count="0" type="stmt"/>
+      <line num="4" count="0" type="stmt"/>
+      <line num="8" count="3" type="stmt"/>
+      <line num="9" count="2" type="stmt"/>
+      <line num="10" count="0" type="stmt"/>
+      <line num="11" count="0" type="stmt"/>
+      <line num="13" count="2" type="stmt"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+    </file>
+    <file name="local-storage.js" path="/home/mai/Desktop/To-do-list/src/local-storage.js">
+      <metrics statements="5" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="1"/>
+      <line num="2" count="0" type="stmt"/>
+      <line num="6" count="3" type="stmt"/>
+      <line num="8" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="12" count="1" type="stmt"/>
+    </file>
   </project>
 </coverage>

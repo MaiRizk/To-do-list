@@ -1,27 +1,27 @@
 /**
-* @jest-environment jsdom
-*/
-/* eslint-disable linebreak-style */
-import { addTask } from './src/add-delete.js';
-// import { displayTasks } from '../src/display-task.js';
-import { saveDataLocalStorage, loadDataLocalStorage } from './src/local-storage.js';
+ * @jest-environment jsdom
+ */
 
-document.body.innerHTML = `
-<li class="task-list">
-</li>
-`;
+const addTask = require("./add-delete");
+const saveDataLocalStorage = require("./local-storage");
+const loadDataLocalStorage = require("./local-storage");
+const deleteTask = require("./add-delete");
 
-const ul = document.querySelector('#list');
-
-describe('add and remove Task', () => {
-  it('Add Task', () => {
+describe("add and remove Task", () => {
+  it("Add Task", () => {
     let array = [];
     array = loadDataLocalStorage();
-    array = addTask(array, 'test1');
-    array = addTask(array, 'test2');
+    array = addTask(array, "test1");
+    array = addTask(array, "test2");
     saveDataLocalStorage(array);
-    // displayTasks(ul);
-    expect(ul.childNodes).toHaveLength(2);
-  })
-}
-);
+    expect(array).toHaveLength(2);
+  });
+
+    it("Delete Task", () => {
+      let array = [];
+      array = loadDataLocalStorage();
+      array = deleteTask(1);
+      saveDataLocalStorage(array);
+      expect(array).toHaveLength(1);
+    });
+});
