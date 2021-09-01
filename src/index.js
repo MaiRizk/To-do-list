@@ -23,7 +23,7 @@ const addTaskToUI = (ul, task) => {
   li.appendChild(remove);
   ul.appendChild(li);
 
-  input.addEventListener('blur', (e) => {
+  input.  ('blur', (e) => {
     editTask(task.index - 1, e.target.value);
   });
 
