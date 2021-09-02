@@ -50,17 +50,3 @@ document.getElementById('description').addEventListener('keypress', (event) => {
 document.getElementById('clear-all').addEventListener('click', () => {
   clearCompleted();
 });
-
-addNewDescription.addEventListener('click', () => {
-  let activities = loadDataLocalStorage();
-  if (inputNewDescription.value === '') {
-    return;
-  }
-  if (activities.findIndex(activity => activity.description === inputNewDescription.value) !== -1) {
-    return;
-  }
-  activities = addTask(activities, inputNewDescription.value);
-  saveDataLocalStorage(activities);
-  inputNewDescription.value = '';
-  displayTasks(ul);
-});

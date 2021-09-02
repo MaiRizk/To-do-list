@@ -8,5 +8,5 @@ function loadDataLocalStorage() {
   return JSON.parse(localStorage.getItem('activities')) || activities;
 }
 
-module.exports = saveDataLocalStorage
-module.exports = loadDataLocalStorage
+module.exports = saveDataLocalStorage;
+module.exports = loadDataLocalStorage;
