@@ -6,6 +6,7 @@ const addTask = require('./add-delete');
 const saveDataLocalStorage = require('./local-storage');
 const loadDataLocalStorage = require('./local-storage');
 const deleteTask = require('./add-delete');
+const editTask = require('./add-delete');
 
 describe('add and remove Task', () => {
   it('Add Task', () => {
@@ -13,6 +14,14 @@ describe('add and remove Task', () => {
     array = loadDataLocalStorage();
     array = addTask(array, 'test1');
     array = addTask(array, 'test2');
+    saveDataLocalStorage(array);
+    expect(array).toHaveLength(1);
+  });
+
+  it('Update Task', () => {
+    let array = [];
+    array = loadDataLocalStorage();
+    array = editTask(1);
     saveDataLocalStorage(array);
     expect(array).toHaveLength(1);
   });

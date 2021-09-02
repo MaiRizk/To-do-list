@@ -4,19 +4,24 @@ function addTask(description, activities) {
   return activities;
 }
 
+function editTask (description) {
+    let activities = [2, 'teste3'];
+//   const newActivity = { description };
+  activities.splice(description, 1);
+//   description.push(newActivity);
+  return description;
+}
+
 function deleteTask(index) {
-  let activities = [2, 'teste'];
+  let activities = [2, 'teste3'];
   activities.splice(index, 1);
   activities = activities.filter((Obj, index) => {
     Obj.index = index;
     return true;
   });
   return activities;
-}
-
-function editTask() {
-
-}
+};
 
 module.exports = addTask;
 module.exports = deleteTask;
+module.exports = editTask;
