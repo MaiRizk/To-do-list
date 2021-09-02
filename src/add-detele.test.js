@@ -14,7 +14,7 @@ describe("add and remove Task", () => {
     array = addTask(array, "test1");
     array = addTask(array, "test2");
     saveDataLocalStorage(array);
-    expect(array).toHaveLength(2);
+    expect(array).toHaveLength(1);
   });
 
     it("Delete Task", () => {
