@@ -14,5 +14,9 @@ function deleteTask(index) {
   return activities;
 }
 
+function editTask() {
+
+}
+
 module.exports = addTask;
 module.exports = deleteTask;
