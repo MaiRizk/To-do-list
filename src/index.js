@@ -1,6 +1,6 @@
 import './style.css';
 import {
-  addTask, clearCompleted, deleteTask, editTask,
+  addTask, clearCompleted, deleteTask,
 } from './function';
 
 import onCheck from './status';
@@ -22,10 +22,6 @@ const addTaskToUI = (ul, task) => {
   remove.innerHTML = '<i class="fas fa-trash-alt"></i>';
   li.appendChild(remove);
   ul.appendChild(li);
-
-  input.addEventListener('blur', (e) => {
-    editTask(task.index - 1, e.target.value);
-  });
 
   checkbox.addEventListener('change', () => {
     onCheck(task.index - 1);
