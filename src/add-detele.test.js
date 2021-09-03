@@ -45,5 +45,10 @@ describe('add and remove Task', () => {
     array = clearCompleted(1);
     saveDataLocalStorage(array);
     expect(array).toHaveLength(1);
+<<<<<<< HEAD
   }); */
 });
+=======
+  });
+});
+>>>>>>> e520870b4b4e328b849ef889f881d1b9e0c6af95
