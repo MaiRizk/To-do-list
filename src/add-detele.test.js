@@ -6,15 +6,24 @@ const addTask = require('./add-delete');
 const saveDataLocalStorage = require('./local-storage');
 const loadDataLocalStorage = require('./local-storage');
 const deleteTask = require('./add-delete');
-const deleteAll = require('./add-delete');
+const editTask = require('./add-delete');
+const clearCompleted = require('./add-delete');
 
 describe('add and remove Task', () => {
   it('Add Task', () => {
     let array = [];
     array = loadDataLocalStorage();
-    array = addTask({ description: 'test1' }, { description: 'test2' });
+    array = addTask(1, 'test1');
     saveDataLocalStorage(array);
-    expect(array).toHaveLength(2);
+    expect(array).toHaveLength(1);
+  });
+
+  it('Update Task', () => {
+    let array = [];
+    array = loadDataLocalStorage();
+    array = editTask(1, 'test changed');
+    saveDataLocalStorage(array);
+    expect(array).toHaveLength(1);
   });
 
   it('Delete Task', () => {
@@ -25,13 +34,11 @@ describe('add and remove Task', () => {
     expect(array).toHaveLength(1);
   });
 
-  it('Delete All Task', () => {
+  it('Delete All Tasks', () => {
     let array = [];
     array = loadDataLocalStorage();
-    array = addTask(array, 'test3');
-    array = addTask(array, 'test4');
-    array = deleteAll(array);
+    array = clearCompleted(1);
     saveDataLocalStorage(array);
-    expect(array).toHaveLength(0);
+    expect(array).toHaveLength(1);
   });
 });

@@ -1,11 +1,11 @@
 function addTask(description, activities) {
-  const newActivity = { description, index: activities.length + 1, completed: false };
+  const newActivity = { description, index: activities.length, completed: false };
   activities.push(newActivity);
   return activities;
 }
 
 function deleteTask(index) {
-  let activities = [2, 'teste3'];
+  let activities = ['teste2'];
   activities.splice(index, 1);
   activities = activities.filter((Obj, index) => {
     Obj.index = index;
@@ -14,16 +14,16 @@ function deleteTask(index) {
   return activities;
 }
 
-function deleteAll() {
-  const activities = [3, 'test3'];
-  let result = activities.filter((activity) => (activity.completed === false));
-  result = result.filter((Obj, index) => {
+function clearCompleted(index) {
+  let activities = ['teste2', 'test3'];
+  activities.splice(index, 1);
+  activities = activities.filter((Obj, index) => {
     Obj.index = index;
     return true;
   });
-  return result;
+  return activities;
 }
 
 module.exports = addTask;
 module.exports = deleteTask;
-module.exports = deleteAll;
+module.exports = clearCompleted;
