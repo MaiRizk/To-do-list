@@ -4,12 +4,14 @@ function addTask(description, activities) {
   return activities;
 }
 
-function editTask (description) {
-    let activities = [2, 'teste3'];
-//   const newActivity = { description };
-  activities.splice(description, 1);
-//   description.push(newActivity);
-  return description;
+function editTask(index, value) {
+  const activities = [2, 'test4'];
+  const afterEdit = activities.map(
+    (activity, currentIndex) => {
+      if (index === currentIndex) activity.description = value;
+      return activity;
+    },
+  );
 }
 
 function deleteTask(index) {
@@ -20,7 +22,7 @@ function deleteTask(index) {
     return true;
   });
   return activities;
-};
+}
 
 module.exports = addTask;
 module.exports = deleteTask;

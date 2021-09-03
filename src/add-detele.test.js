@@ -21,7 +21,7 @@ describe('add and remove Task', () => {
   it('Update Task', () => {
     let array = [];
     array = loadDataLocalStorage();
-    array = editTask(1);
+    array = editTask(1, 'test changed');
     saveDataLocalStorage(array);
     expect(array).toHaveLength(1);
   });
