@@ -1,17 +1,7 @@
 function addTask(description, activities) {
-  const newActivity = { description, index: activities.length, completed: false };
+  const newActivity = { description, index: activities.length + 1, completed: false };
   activities.push(newActivity);
   return activities;
-}
-
-function editTask(index, value) {
-  const activities = [2, 'test4'];
-  const afterEdit = activities.map(
-    (activity, currentIndex) => {
-      if (index === currentIndex) activity.description = value;
-      return activity;
-    },
-  );
 }
 
 function deleteTask(index) {
@@ -24,6 +14,16 @@ function deleteTask(index) {
   return activities;
 }
 
+function deleteAll() {
+  const activities = [3, 'test3'];
+  let result = activities.filter((activity) => (activity.completed === false));
+  result = result.filter((Obj, index) => {
+    Obj.index = index;
+    return true;
+  });
+  return result;
+}
+
 module.exports = addTask;
 module.exports = deleteTask;
-module.exports = editTask;
+module.exports = deleteAll;
