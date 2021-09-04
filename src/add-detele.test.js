@@ -2,23 +2,21 @@
  * @jest-environment jsdom
  */
 
-import { mockHtml } from './mockhtml.js';
-import { addTask } from './function.js';
-import { deleteTask } from './function.js';
-import { clearCompleted } from './function.js';
-import { editTask } from './edit-task-mock.js';
-import { listItems } from './index'
-import { onCheck } from './status'
+import { mockHtml } from './mockhtml';
+import { addTask, deleteTask, clearCompleted } from './function';
+import { editTask } from './edit-task-mock';
+import { listItems } from './index';
+import { onCheck } from './status';
 
 describe('add Task', () => {
   it('Add Task to localStorage', () => {
-    document.body.innerHTML = mockHtml; 
+    document.body.innerHTML = mockHtml;
     addTask();
     expect(JSON.parse(localStorage.getItem('tasks'))).toHaveLength(1);
   });
 
   it('Add li task item', () => {
-    document.body.innerHTML = mockHtml; 
+    document.body.innerHTML = mockHtml;
     addTask();
     listItems();
     const list = document.querySelectorAll('#list li');
@@ -51,9 +49,9 @@ describe('Edit task description value', () => {
 
 test('delete second item from the list', () => {
   deleteTask(1);
-    const ul = document.getElementById('list');
-    ul.innerHTML = "";
-    listItems();
+  const ul = document.getElementById('list');
+  ul.innerHTML = '';
+  listItems();
   const list = document.querySelectorAll('#list li');
   expect(list).toHaveLength(1);
 });
@@ -77,4 +75,3 @@ describe('Delete all completed tasks', () => {
     expect(JSON.parse(localStorage.getItem('tasks'))).toHaveLength(3);
   });
 });
-

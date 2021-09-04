@@ -9,7 +9,7 @@ export const addTask = () => {
 
   localStorage.setItem('tasks', JSON.stringify([...tasks, task]));
   document.querySelector('#description').value = '';
-  window.location.reload();
+  // window.location.reload();
 };
 
 export const editTask = (index, value) => {
@@ -41,5 +41,5 @@ export const clearCompleted = () => {
     });
 
   localStorage.setItem('tasks', JSON.stringify(notCompletedTasks));
-  window.location.reload();
+  // window.location.reload();
 };

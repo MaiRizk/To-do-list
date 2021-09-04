@@ -1,35 +1,36 @@
 // import './style.css';
-import { addTask, clearCompleted, deleteTask } from "./function";
+import { addTask, clearCompleted, deleteTask } from './function';
 
-import onCheck from "./status";
+import onCheck from './status';
 
-const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
-window.localStorage.setItem("tasks", JSON.stringify(tasks));
+localStorage.setItem('tasks', JSON.stringify(tasks));
 
 const addTaskToUI = (ul, task) => {
-  const li = document.createElement("li");
-  const checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
+  const li = document.createElement('li');
+  const checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
   checkbox.checked = task.completed;
   li.appendChild(checkbox);
-  const input = document.createElement("input");
+  const input = document.createElement('input');
   input.value = task.description;
   li.appendChild(input);
-  const remove = document.createElement("button");
+  const remove = document.createElement('button');
   remove.innerHTML = '<i class="fas fa-trash-alt"></i>';
   li.appendChild(remove);
   ul.appendChild(li);
 
-  checkbox.addEventListener("change", () => {
+  checkbox.addEventListener('change', () => {
     onCheck(task.index - 1);
   });
-  remove.addEventListener("click", () => {
+  remove.addEventListener('click', () => {
     li.parentNode.removeChild(li);
     deleteTask(task.index);
   });
 };
 
+// eslint-disable-next-line import/prefer-default-export
 export function listItems() {
   const ul = document.getElementById('list');
   const tasks = JSON.parse(localStorage.getItem('tasks'));
@@ -40,17 +41,13 @@ export function listItems() {
 
 listItems();
 
-
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("description").addEventListener("keypress", (event) => {
-    if (event.key === "Enter") {
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('description').addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
       addTask();
     }
   });
-  document.getElementById("clear-all").addEventListener("click", () => {
+  document.getElementById('clear-all').addEventListener('click', () => {
     clearCompleted();
   });
 });

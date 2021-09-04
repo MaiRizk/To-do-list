@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/prefer-default-export
 export const onCheck = (index) => {
   const tasks = JSON.parse(localStorage.getItem('tasks')).map(
     (item, currentIndex) => {
