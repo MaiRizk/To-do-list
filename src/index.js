@@ -1,13 +1,11 @@
-import './style.css';
-import {
-  addTask, clearCompleted, deleteTask,
-} from './function';
+// import './style.css';
+import { addTask, clearCompleted, deleteTask } from './function';
 
 import onCheck from './status';
 
 const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
-window.localStorage.setItem('tasks', JSON.stringify(tasks));
+localStorage.setItem('tasks', JSON.stringify(tasks));
 
 const addTaskToUI = (ul, task) => {
   const li = document.createElement('li');
@@ -32,8 +30,10 @@ const addTaskToUI = (ul, task) => {
   });
 };
 
-function listItems() {
+// eslint-disable-next-line import/prefer-default-export
+export function listItems() {
   const ul = document.getElementById('list');
+  const tasks = JSON.parse(localStorage.getItem('tasks'));
   tasks.forEach((task) => {
     addTaskToUI(ul, task);
   });
@@ -41,12 +41,13 @@ function listItems() {
 
 listItems();
 
-document.getElementById('description').addEventListener('keypress', (event) => {
-  if (event.key === 'Enter') {
-    addTask();
-  }
-});
-
-document.getElementById('clear-all').addEventListener('click', () => {
-  clearCompleted();
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('description').addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+      addTask();
+    }
+  });
+  document.getElementById('clear-all').addEventListener('click', () => {
+    clearCompleted();
+  });
 });
