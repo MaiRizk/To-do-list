@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/MaiRizk/To-do-list#readme",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.15.4",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
@@ -48,7 +49,9 @@
     "webpack-dev-server": "^4.0.0"
   },
   "dependencies": {
+    "babel-jest": "^27.1.0",
     "jsdom": "^17.0.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "ts-jest": "^27.0.5"
   }
 }
