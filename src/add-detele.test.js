@@ -2,21 +2,15 @@
  * @jest-environment jsdom
  */
 
-// const addTask = require('./add-delete');
-
 import { mockHtml } from './mockhtml.js';
 import { addTask } from './function.js';
+import { deleteTask } from './function.js';
+import { clearCompleted } from './function.js';
 import { editTask } from './edit-task-mock.js';
 import { listItems } from './index'
-/* const addTask = require('./function');
-const saveDataLocalStorage = require('./local-storage');
-const loadDataLocalStorage = require('./local-storage');
-const deleteTask = require('./add-delete');
-const editTask = require('./add-delete');
-const clearCompleted = require('./add-delete');
-const mockHtml = require('./mockhtml'); */
+import { onCheck } from './status'
 
-describe('add and remove Task', () => {
+describe('add Task', () => {
   it('Add Task to localStorage', () => {
     document.body.innerHTML = mockHtml; 
     addTask();
@@ -33,7 +27,7 @@ describe('add and remove Task', () => {
 });
 
 describe('Edit task description value', () => {
-  test('change first task description value to Feed cat in local Storage',
+  test('change first task description value to Jest Change Test in local Storage',
     () => {
       const instanceMock = jest.spyOn(editTask, 'instance');
       const list = JSON.parse(localStorage.getItem('tasks'));
@@ -45,39 +39,42 @@ describe('Edit task description value', () => {
           callback();
         });
 
-      editTask.init(list, 'Feed Cat', 0);
+      editTask.init(list, 'Jest Change Test', 0);
       expect(pDescription.addEventListener).toBeCalledWith(
         'keydown',
         expect.any(Function),
       );
       expect(instanceMock).toBeCalledTimes(1);
-      expect(JSON.parse(localStorage.getItem('task'))[0].description).toBe('Feed Cat');
+      expect(JSON.parse(localStorage.getItem('task'))[0].description).toBe('Jest Change Test');
     });
 });
 
+test('delete second item from the list', () => {
+  deleteTask(1);
+    const ul = document.getElementById('list');
+    ul.innerHTML = "";
+    listItems();
+  const list = document.querySelectorAll('#list li');
+  expect(list).toHaveLength(1);
+});
 
-/*   it('Update Task', () => {
-    let array = ['test changed'];
-    array = loadDataLocalStorage();
-    array = editTask(1, 'test changed');
-    saveDataLocalStorage(array);
-    expect(array).toHaveLength(1);
+describe('Update the completed status from tasks', () => {
+  test('Changing the first item to complete true', () => {
+    document.body.innerHTML = mockHtml;
+    addTask();
+    addTask();
+    addTask();
+    listItems();
+    onCheck(0);
+    expect(JSON.parse(localStorage.getItem('tasks'))[0].completed).toBeTruthy();
   });
+});
 
-  it('Delete Task', () => {
-    let array = [];
-    array = loadDataLocalStorage();
-    array = deleteTask(1);
-    saveDataLocalStorage(array);
-    expect(array).toHaveLength(1);
+describe('Delete all completed tasks', () => {
+  test('Delete all completed tasks, in that case just the first one', () => {
+    listItems();
+    clearCompleted();
+    expect(JSON.parse(localStorage.getItem('tasks'))).toHaveLength(3);
   });
+});
 
-  it('Delete All Tasks', () => {
-    let array = [];
-    array = loadDataLocalStorage();
-    array = clearCompleted(1);
-    saveDataLocalStorage(array);
-    expect(array).toHaveLength(1);
-  });
-
-*/
